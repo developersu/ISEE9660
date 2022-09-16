@@ -134,7 +134,7 @@ public class ISO9660 {
 
         int entryOffset = 0;
         while (entryOffset < entry.getDataSize()){
-            byte entryLength = bytes[entryOffset];
+            int entryLength = Byte.toUnsignedInt(bytes[entryOffset]);
 
             if (entryLength == 0)
                 break;
