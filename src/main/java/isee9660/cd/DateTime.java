@@ -32,13 +32,13 @@ public class DateTime {
         DateTime INSTANCE = new DateTime();
         INSTANCE.rawDateTime = dateTimeBytes;
 
-        int timeZone = dateTimeBytes[6]*15/60;
+        float timeZone = dateTimeBytes[6]*15/60f;
 
         String timeZoneString;
         if (timeZone > 0)
             timeZoneString = "+"+timeZone;
         else
-            timeZoneString = Integer.toString(timeZone);
+            timeZoneString = Float.toString(timeZone);
 
         INSTANCE.dateTime = String.format("%s-%s-%s %s:%s:%s:%s GMT%s",
                 new String(dateTimeBytes, 0, 4, StandardCharsets.US_ASCII),
@@ -56,13 +56,13 @@ public class DateTime {
         DateTime INSTANCE = new DateTime();
         INSTANCE.rawDateTime = dateTimeBytes;
 
-        int timeZone = dateTimeBytes[6]*15/60;
+        float timeZone = dateTimeBytes[6]*15/60f;
 
         String timeZoneString;
         if (timeZone > 0)
             timeZoneString = "+"+timeZone;
         else
-            timeZoneString = Integer.toString(timeZone);
+            timeZoneString = Float.toString(timeZone);
 
         INSTANCE.dateTime = String.format("%d-%02d-%02d %02d:%02d:%02d GMT%s",
                 (1900+dateTimeBytes[0]),
